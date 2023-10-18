@@ -25,7 +25,7 @@ CREATE SEQUENCE public.user_id_seq
 
  Para invocar a los servicios creados en la demo están los siguientes 3 comandos CURL:
 
- Create Use:
+ Create User:
  curl --location 'http://localhost:8080/demo/create-user' \
 --header 'Content-Type: application/json' \
 --data '{
