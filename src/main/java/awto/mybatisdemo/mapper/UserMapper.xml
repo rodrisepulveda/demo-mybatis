@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="awto.mybatisdemo.mapper.UserMapper">
+
+	<insert id="createUser" parameterType="awto.mybatisdemo.pojo.User">
+		
+		<selectKey keyProperty="id" resultType="long" order="BEFORE">
+			select nextval('user_id_seq')
+		</selectKey> 
+		
+		insert into user (id, name)  values(#{id}, #{name}); 
+		
+	</insert>
+	
+	<update id="updateUser" parameterType="awto.mybatisdemo.pojo.User">
+		update users set name = #{name} where id = #{id};
+	</update>
+	
+	<select id="listUsers" resultType="awto.mybatisdemo.pojo.User">
+		select id as id, name as name from users;
+	</select>
+	
+</mapper>
