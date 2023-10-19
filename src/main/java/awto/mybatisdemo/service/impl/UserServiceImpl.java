@@ -17,21 +17,18 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void createUser(User user) {
-
 		userMapper.createUser(user);
-
 	}
 
 	@Override
 	public void updateUser(User user) {
-
 		userMapper.updateUser(user);
-
 	}
 
 	@Override
 	public List<User> listUsers() {
-		return userMapper.listUsers();
+		List<User> listOfUsers = userMapper.listUsers();
+		return listOfUsers;
 	}
 
 }

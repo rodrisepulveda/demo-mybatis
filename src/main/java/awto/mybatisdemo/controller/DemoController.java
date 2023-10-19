@@ -25,29 +25,20 @@ public class DemoController {
 
 	@PostMapping("/create-user")
 	public ResponseEntity<String> createUser(@RequestBody User user) {
-
 		userService.createUser(user);
-
 		return ResponseEntity.ok("ok");
-
 	}
 
 	@PutMapping("/update-user")
 	public ResponseEntity<String> updateUser(@RequestBody User user) {
-
 		userService.updateUser(user);
-
 		return ResponseEntity.ok("ok");
-
 	}
 
 	@GetMapping("/list-users")
 	public ResponseEntity<List<User>> listUsers() {
-
 		List<User> listOfUsers = userService.listUsers();
-
 		return ResponseEntity.ok(listOfUsers);
-
 	}
 
 }
