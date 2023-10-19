@@ -9,7 +9,7 @@
 			select nextval('user_id_seq')
 		</selectKey> 
 		
-		insert into user (id, name)  values(#{id}, #{name}); 
+		insert into users (id, name)  values(#{id}, #{name}); 
 		
 	</insert>
 	
