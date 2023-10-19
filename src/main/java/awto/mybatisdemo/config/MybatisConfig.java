@@ -6,6 +6,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
 @Configuration
@@ -30,6 +31,13 @@ public class MybatisConfig {
 		dataSource.setPassword(this.password);
 
 		return dataSource;
+	}
+	
+	@Bean(name = "demo-tm")
+	public DataSourceTransactionManager transactionManager() {
+
+		return new DataSourceTransactionManager(dataSource());
+
 	}
 
 }

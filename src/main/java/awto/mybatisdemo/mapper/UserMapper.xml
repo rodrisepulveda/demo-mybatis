@@ -18,7 +18,7 @@
 	</update>
 	
 	<select id="listUsers" resultType="awto.mybatisdemo.pojo.User">
-		select id as id, name as name from users;
+		select id as id, name as name from users order by id;
 	</select>
 	
 </mapper>
